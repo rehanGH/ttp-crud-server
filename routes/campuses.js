@@ -27,12 +27,34 @@ const campuses = [
 ];
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
+router.get("/", (req, res, next) => {
   // Campus.findAll()
   //   .then((campuses) => res.json(campuses))
   //   .catch((err) => console.log(err));
 
   res.json(campuses);
 });
+
+// Route to server single campus on its id`
+router.post('/:id', (req,res,next)=> {
+  res.send(`Route to server single campus on its id`)
+})
+
+
+// Route to handle adding a server
+router.post('/', (req,res,next)=> {
+  res.send(`Route to handle adding a server`)
+})
+
+// Route to handle editing a campus
+router.post('/:id', (req,res,next)=> {
+  res.send( `Route to handle editing a campus`)
+})
+
+// Route to handle removing a campus
+router.post('/:id', (req,res,next)=> {
+  res.send(`Route to handle removing a campus`)
+})
+
 
 module.exports = router;
